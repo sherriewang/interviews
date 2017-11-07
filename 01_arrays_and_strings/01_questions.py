@@ -1,5 +1,33 @@
 import numpy as np
 
+def isUnique(string):
+    """
+    Question 1.1
+    Returns whether a string has all unique characters.
+    """
+    string = sorted(string)
+    for i in range(len(string)-1):
+        if string[i] == string[i+1]:
+            return False
+    return True
+
+def isPermutation(str1, str2):
+    """
+    Question 1.2
+    Returns whether two ASCII strings are permutations of each other.
+    """
+    if len(str1) != len(str2):
+        return False
+    str1_counts = np.zeros(128)
+    str2_counts = np.zeros(128)
+    for i in range(len(str1)):
+        str1_counts[ord(str1[i])] += 1
+        str2_counts[ord(str2[i])] += 1
+    for i in range(128):
+        if str1_counts[i] != str2_counts[i]:
+            return False
+    return True
+
 def compressString(string):
     """
     Question 1.5
