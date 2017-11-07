@@ -11,9 +11,10 @@ def isUnique(string):
             return False
     return True
 
+
 def isPermutation(str1, str2):
     """
-    Question 1.2
+    Question 1.3
     Returns whether two ASCII strings are permutations of each other.
     """
     if len(str1) != len(str2):
@@ -27,6 +28,7 @@ def isPermutation(str1, str2):
         if str1_counts[i] != str2_counts[i]:
             return False
     return True
+    
 
 def compressString(string):
     """
